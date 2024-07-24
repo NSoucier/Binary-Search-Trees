@@ -161,19 +161,15 @@ class BinarySearchTree {
   bfs() {
     const result = [];
     const queue = [this.root];
-    let current = this.root;
 
     while (queue.length) {
       result.push(queue[0].val);
-      if (current.left !== null) queue.push(current.left)
-      if (current.right !== null) queue.push(current.right)
+      if (queue[0].left !== null) queue.push(queue[0].left)
+      if (queue[0].right !== null) queue.push(queue[0].right)
       
-      // check if this works
-
       queue.shift();
     }
 
-    console.log(result)
     return result
   }
 
